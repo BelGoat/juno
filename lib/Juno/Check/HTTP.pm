@@ -6,7 +6,7 @@ package Juno::Check::HTTP;
 use AnyEvent::HTTP;
 use Moo;
 use MooX::Types::MooseLike::Base qw<Str HashRef>;
-use namespace::autoclean;
+use namespace::sweep;
 
 with 'Juno::Role::Check';
 
@@ -28,7 +28,7 @@ sub check {
     my $path  = $self->path;
 
     foreach my $host (@hosts) {
-        my $url  = "http://$host" . $path;
+        my $url = "http://$host" . $path;
 
         $self->has_on_before
             and $self->on_before->( $self, $host );
