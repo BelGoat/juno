@@ -81,3 +81,20 @@ sub check {
 
 __END__
 
+=head1 DESCRIPTION
+	Juno::Check::Ping uses AnyEvent::Ping to check one or more host for consistanc connections and act to a given method.
+	Greate for monitoring latency and connection lost and acting accordingly.
+
+=head1 SYNOPSIS
+
+		my $juno = Juno->new(
+			checks => {
+				Ping => {
+					hosts => [ 'tom, 'jerry' ],
+				}
+
+=head1 ATTRIBUTES
+
+=head2 pinger
+Handle of the pinger method.
+Default: AnyEvent::Ping -> new
